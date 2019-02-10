@@ -22,7 +22,8 @@
     "start": "webpack-dev-server --mode development --open",
     "build": "webpack --mode production",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "dev": "webpack-dev-server --mode development --open"
   },
   "eslintConfig": {
     "extends": "react-app"

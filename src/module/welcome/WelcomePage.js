@@ -140,7 +140,7 @@ class WelcomePage extends React.Component {
             type="bottom"
             className="introduction-item-group"
             component={Row}
-            componentProps={{gutter: 50}}
+            componentProps={{gutter: 20}}
             key="introduction-item-group"
           >
             {introduction.map((item, index) => (

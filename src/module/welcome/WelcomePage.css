@@ -184,7 +184,7 @@ html, body::-webkit-scrollbar-thumb {
 
 .introduction-item-group {
     height: 500px;
-    padding: 100px 0;
+    padding: 100px 100px;
     /*display: flex;*/
     /*justify-content: space-evenly;*/
     /*align-items: center;*/
@@ -197,7 +197,7 @@ html, body::-webkit-scrollbar-thumb {
     padding: 10px 0 0 0;
     text-align: center;
     position: relative;
-    transform: scale(0.8, 0.8);
+    transform: scale(0.8, 0.8) !important;
     transition: transform .5s ease-in-out, box-shadow .5s ease-in-out, opacity .5s ease-in-out;
 }
 
@@ -222,6 +222,7 @@ html, body::-webkit-scrollbar-thumb {
     margin: auto;
     width: 210px;
     height: 210px;
+    transform: scale(0.9,0.9) !important;
     border-radius: 50%;
     position: absolute;
     left: 0;
@@ -357,7 +358,7 @@ html, body::-webkit-scrollbar-thumb {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+    background-image: linear-gradient(-225deg, #AC32E4 0%, #7918F2 48%, #4801FF 100%);
 
 }
 
@@ -396,7 +397,6 @@ html, body::-webkit-scrollbar-thumb {
     /*background-color: black;*/
 }
 
-
 .footer-content-item {
     /*background-color: red;*/
     height: 540px;
@@ -408,25 +408,25 @@ html, body::-webkit-scrollbar-thumb {
     font-size: 20px;
 }
 
-.footer-content-title{
+.footer-content-title {
     font-weight: bold;
     width: 150px;
     margin-bottom: 40px;
     font-size: 30px;
 }
 
-.footer-content-link{
+.footer-content-link {
     width: 150px;
     margin: 5px 0;
     transition: color .25s ease-in-out;
 }
 
-.footer-content-link:hover{
+.footer-content-link:hover {
     color: #185cfe;
     transition: all .25s ease-in-out;
 }
 
-.footer-qrcode{
+.footer-qrcode {
     font-size: 16px;
     margin-top: 20px;
     color: #e1e1e1;
