@@ -1,5 +1,5 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+// const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
@@ -17,21 +17,13 @@ module.exports = {
         use: [
           {
             loader: 'html-loader',
-            options: { minimize: true },
+            options: {minimize: true},
           },
         ],
       },
       {
         test: /\.css$/,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              publicPath: '../', // 可以配置输出的css文件路径
-            },
-          },
-          'css-loader',
-        ],
+        loader: 'style-loader!css-loader',
       },
       {
         test: /.(jpg|png|gif|svg)$/,
@@ -45,9 +37,9 @@ module.exports = {
       template: './public/index.html',
       filename: './index.html',
     }),
-    new MiniCssExtractPlugin({
-      filename: '[name].css',
-    }),
+    // new MiniCssExtractPlugin({
+    //   filename: '[name].css',
+    // }),
   ],
   devServer: {
     // contentBase: require('path').join(__dirname, 'dist'),
@@ -62,7 +54,7 @@ module.exports = {
         // 目标服务器地址
         target: 'https://algyun.cn:81/',
         // 路径重写
-        pathRewrite: { '^/api': '' },
+        pathRewrite: {'^/api': ''},
         changeOrigin: true,
         secure: false,
       },

@@ -7,7 +7,7 @@ import Texty from 'rc-texty';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 
 import Test from './Test';
-import WelcomeIntroduction from './WelcomeIntroduction';
+import Login from '../login/Login';
 import http from '../../utils/fetch';
 
 import introduction from '../../utils/getIntroduction';
@@ -33,7 +33,7 @@ class WelcomePage extends React.Component {
   async getMarketList() {
     const data = await http.get('https://algyun.cn:81/market/list/');
     this.setState(data, () => {
-      this.setState({isLoading: false});
+      this.setState({ isLoading: false });
     });
     console.log(data);
   }
@@ -91,12 +91,12 @@ class WelcomePage extends React.Component {
         className="banner"
         key="banner"
         component={Row}
-        componentProps={{gutter: 32}}
+        componentProps={{ gutter: 32 }}
         delay={700}
         duration={1000}
       >
         <Col span={12} key="img" className="banner-img">
-          <img src={require('../../assets/img/banner.png')} width="500px" height="350px"/>
+          <img src={require('../../assets/img/banner.png')} width="500px" height="350px" />
         </Col>
         <Col span={12} className="wrap" key="wrap">
           <Texty
@@ -124,7 +124,7 @@ class WelcomePage extends React.Component {
   }
 
   renderIntroduction() {
-    const {featureIndex, show} = this.state;
+    const { featureIndex, show } = this.state;
     return (
       <OverPack playScale={0.4} localtion="introduction">
         <QueueAnim
@@ -135,12 +135,12 @@ class WelcomePage extends React.Component {
           type="bottom"
         >
           <div className="title" key="title">以学生为主的多功能平台</div>
-          <div className="title-decoration" key="title-decoration"/>
+          <div className="title-decoration" key="title-decoration" />
           <QueueAnim
             type="bottom"
             className="introduction-item-group"
             component={Row}
-            componentProps={{gutter: 20}}
+            componentProps={{ gutter: 20 }}
             key="introduction-item-group"
           >
             {introduction.map((item, index) => (
@@ -148,14 +148,14 @@ class WelcomePage extends React.Component {
                 <Tooltip placement="bottom" title={item.info} autoAdjustOverflow overlayClassName="introduction-tip">
                   <QueueAnim
                     component={Col}
-                    componentProps={{span: 6}}
+                    componentProps={{ span: 6 }}
                     type="scaleBig"
                     className="introduction-item"
                     key={index}
                   >
-                    <img src={item.img} key="item-img"/>
+                    <img src={item.img} key="item-img" />
                     <div className="introduction-item-content" key="item-content">{item.title}</div>
-                    <div className="introduction-item-round" key="item-round"/>
+                    <div className="introduction-item-round" key="item-round" />
                   </QueueAnim>
                 </Tooltip>
               </QueueAnim>
@@ -171,7 +171,7 @@ class WelcomePage extends React.Component {
       <OverPack location="slider" playScale={0.4}>
         <QueueAnim className="slider" key="slider" type="bottom" leaveReverse ease="easeOutQuart">
           <div className="title" key="title">在这里收获更多</div>
-          <div className="title-decoration" key="title-decoration"/>
+          <div className="title-decoration" key="title-decoration" />
           <div key="slider-img">
             <Carousel
               autoplay
@@ -180,12 +180,12 @@ class WelcomePage extends React.Component {
               }}
             >
               {introduction.map((item, index) => (
-                <img className="slider-img" key={index} src={item.slider}/>
+                <img className="slider-img" key={index} src={item.slider} />
               ))}
             </Carousel>
           </div>
-          <div className="change-slider left" key="left" onClick={this.handleClick.bind(this, 'left')}/>
-          <div className="change-slider right" key="right" onClick={this.handleClick.bind(this, 'right')}/>
+          <div className="change-slider left" key="left" onClick={this.handleClick.bind(this, 'left')} />
+          <div className="change-slider right" key="right" onClick={this.handleClick.bind(this, 'right')} />
         </QueueAnim>
       </OverPack>
     );
@@ -196,16 +196,16 @@ class WelcomePage extends React.Component {
       <OverPack location="feature" playScale={0.6}>
         <QueueAnim className="feature" key="feature" type="bottom" leaveReverse ease="easeOutQuart">
           <div className="title" key="title">体验全新校园生活</div>
-          <div className="title-decoration" key="title-decoration"/>
+          <div className="title-decoration" key="title-decoration" />
           <QueueAnim key="feature-item" type="bottom">
             {feature.map((item, index) => (
               <Row className="feature-item" type="flex" key={index}>
                 <Col span={12} order={index % 2 == 0 ? 2 : 1}>
-                  <img className="feature-img" src={item.img}/>
+                  <img className="feature-img" src={item.img} />
                 </Col>
                 <Col span={12} order={index % 2 == 0 ? 1 : 2}>
                   <div className="feature-info">
-                    <div className="feature-decoration"/>
+                    <div className="feature-decoration" />
                     <div className="feature-title">{item.title}</div>
                     <div className="feature-content">
                       {/* 未来可能要加装饰 */}
@@ -262,7 +262,8 @@ class WelcomePage extends React.Component {
                 </Col>
                 <Col span={9} className="footer-content-item" key="qrcode">
                   <img
-                    src="https://cdn.suisuijiang.com/ImageMessage/5b4ee8321b53ec11c8505de5_1549366687785.png?width=270&height=270"/>
+                    src="https://cdn.suisuijiang.com/ImageMessage/5b4ee8321b53ec11c8505de5_1549366687785.png?width=270&height=270"
+                  />
                   <div className="footer-qrcode">（ 扫一扫获取更多信息 ）</div>
                 </Col>
               </QueueAnim>
@@ -277,11 +278,11 @@ class WelcomePage extends React.Component {
   }
 
   render() {
-    const {commodityList, isLoading} = this.state;
+    const { commodityList, isLoading } = this.state;
     return (
       <QueueAnim type="scaleBig" duration={800}>
         <div className={this.state.scrollY > 1 ? 'nav change-nav' : 'nav'} key="navbar">
-          <img src={require('../../assets/img/logo.png')} width="80px" height="30px"/>
+          <img src={require('../../assets/img/logo.png')} width="80px" height="30px" />
           <div className="link-group">
             <div className="link-item" key="1">钟霆融</div>
             <div className="link-item" key="2">钟霆融</div>
