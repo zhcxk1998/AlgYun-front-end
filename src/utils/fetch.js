@@ -36,20 +36,21 @@ const http = {
           resolve(response.data);
         })
         .catch((error) => {
-          switch (error.response.status) {
-            // 密码错误
-            case 401:
-              resolve('401');
-              break;
-            // 用户不存在
-            case 403:
-              resolve('403');
-              break;
-            // 服务器错误
-            default:
-              resolve('500');
-              break;
-          }
+          resolve(error.response);
+          // switch (error.response.status) {
+          //   // 密码错误
+          //   case 401:
+          //     resolve('401');
+          //     break;
+          //   // 用户不存在
+          //   case 403:
+          //     resolve('403');
+          //     break;
+          //   // 服务器错误
+          //   default:
+          //     resolve('500');
+          //     break;
+          // }
         });
     });
   },

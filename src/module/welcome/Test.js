@@ -4,7 +4,7 @@ import Texty from 'rc-texty';
 class Test extends React.Component {
   render() {
     return (
-      <Texty/>
+      <Texty />
     );
   }
 }
