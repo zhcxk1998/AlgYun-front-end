@@ -75,6 +75,7 @@ html, body::-webkit-scrollbar-thumb {
     outline: none;
     border: none;
     border-radius: 12px;
+    color: #fff;
     background: transparent;
     box-shadow: #fff 0 0 5px 1px;
     transition: transform .25s ease-in-out, box-shadow .25s ease-in-out;

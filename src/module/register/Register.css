@@ -78,7 +78,6 @@
 .register-input {
     width: 100%;
     padding: 0 10%;
-    margin: 20px 0;
     border: none;
     border-bottom: #999 2px solid;
     height: 40px;
@@ -138,5 +137,11 @@
     left: 2%;
     font-size: 20px !important;
     position: absolute;
-    top: 26px;
+    top: 0 !important;
+}
+
+.ant-form-explain{
+    color: #fa4a2b !important;
+    letter-spacing: 2px;
+    font-weight: bold;
 }

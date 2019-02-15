@@ -78,7 +78,6 @@
 .login-input {
     width: 100%;
     padding: 0 10%;
-    margin: 20px 0;
     border: none;
     border-bottom: #999 2px solid;
     height: 40px;
@@ -139,4 +138,10 @@
     font-size: 20px !important;
     position: absolute;
     top: 26px;
+}
+
+.ant-form-explain{
+    color: #fa4a2b !important;
+    letter-spacing: 2px;
+    font-weight: bold;
 }
