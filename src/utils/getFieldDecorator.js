@@ -1,26 +1,15 @@
 module.exports = [
-  {
-    name: 'phone_number',
-    icon: 'icon-shouji1',
-    placeholder: '手机号',
-    config: {
-      rules: [{
-        required: true, message: '请输入手机号！',
-      }],
-      initialValue: '',
-    },
-  },
-  {
-    name: 'password',
-    icon: 'icon-mima',
-    placeholder: '密码',
-    config: {
-      rules: [{
-        required: true, message: '请输入密码！',
-      }],
-      initialValue: '',
-    },
-  },
+  // {
+  //   name: 'phone_number',
+  //   icon: 'icon-shouji1',
+  //   placeholder: '手机号',
+  //   config: {
+  //     rules: [{
+  //       required: true, message: '请输入手机号！',
+  //     }],
+  //     initialValue: '',
+  //   },
+  // },
   {
     name: 'email',
     icon: 'icon-youxiang',
@@ -34,6 +23,17 @@ module.exports = [
           type: 'email', message: '请输入合法的邮箱地址！',
         },
       ],
+      initialValue: '',
+    },
+  },
+  {
+    name: 'password',
+    icon: 'icon-mima',
+    placeholder: '密码',
+    config: {
+      rules: [{
+        required: true, message: '请输入密码！',
+      }],
       initialValue: '',
     },
   },
