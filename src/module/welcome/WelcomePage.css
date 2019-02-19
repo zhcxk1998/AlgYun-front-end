@@ -88,6 +88,7 @@ html, body::-webkit-scrollbar-thumb {
 
 .change-nav .action-login {
     box-shadow: #000 0 0 5px 1px;
+    color: #666;
 }
 
 .change-nav .action-login:hover {

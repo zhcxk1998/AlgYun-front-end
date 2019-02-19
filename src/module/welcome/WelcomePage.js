@@ -9,8 +9,8 @@ import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 
 import Test from './Test';
 import Login from '../login/Login';
-import http from '../../utils/fetch';
 
+import http from '../../utils/fetch';
 import introduction from '../../utils/getIntroduction';
 import feature from '../../utils/getFeature';
 
@@ -22,45 +22,7 @@ class WelcomePage extends React.Component {
     super(props);
     this.state = {
       scrollY: '',
-      commodityList: [],
-      has_next: false,
-      has_previous: false,
-      status: true,
-      isLoading: true,
     };
-  }
-
-  // 获取商品列表
-  async getMarketList() {
-    const data = await http.get('https://algyun.cn:81/market/list/');
-    this.setState(data, () => {
-      this.setState({isLoading: false});
-    });
-    console.log(data);
-  }
-
-  // 获取商品类别
-  async getMarketCategory() {
-    const data = await http.get('https://algyun.cn:81/market/classification/');
-    this.setState(data);
-    console.log(data);
-  }
-
-  // 获取兼职信息列表
-  async getPtjList() {
-    const data = await http.get('https://algyun.cn:81/ptj/list/');
-    this.setState(data);
-    console.log(data);
-  }
-
-  // 用户登录
-  async userLogin() {
-    const user = {
-      phone_number: 18023013081,
-      password: 123123,
-    };
-    const res = await http.post('/api/users/', JSON.stringify(user));
-    console.log(res);
   }
 
   async componentDidMount() {
@@ -69,10 +31,6 @@ class WelcomePage extends React.Component {
         scrollY: window.scrollY,
       });
     };
-    // this.userLogin();
-    // this.getMarketList();
-    // this.getMarketCategory();
-    // this.getPtjList();
   }
 
   handleClick(direction) {
