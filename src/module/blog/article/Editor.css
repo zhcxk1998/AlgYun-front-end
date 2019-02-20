@@ -1,0 +1,41 @@
+.fullscreen {
+    z-index: 999 !important;
+}
+
+.editor-preview p{
+    min-height: 1em;
+}
+
+.editor-header {
+    padding: 20px 10% !important;
+    box-shadow: rgba(102, 102, 102, 0.5) 0 10px 20px -8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(10, 207, 254, 0.02);
+}
+
+.editor-wrap{
+    background: url(../../../assets/img/blog/editor/bg.png) no-repeat;
+    background-size: 100% 100%;
+    padding: 40px 0;
+}
+
+.editor-content {
+    width: 80%;
+    border: rgba(0, 0, 0, 0.5) 1px solid;
+    border-radius: 12px;
+    box-shadow: #000 0 20px 40px -15px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.94);
+}
+
+.editor-title {
+    width: 400px !important;
+}
+
+.editor-button {
+    width: 120px ;
+    border-radius: 12px !important;
+    opacity: 0.8;
+}

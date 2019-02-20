@@ -348,7 +348,7 @@ html, body::-webkit-scrollbar-thumb {
     transition: all .25s ease-in-out;
 }
 
-.footer {
+.welcome-footer {
     min-height: 1000px;
     background-color: #fff;
 }

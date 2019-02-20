@@ -21,11 +21,11 @@ class WelcomePage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      scrollY: '',
+      scrollY: 0,
     };
   }
 
-  async componentDidMount() {
+  componentDidMount() {
     window.onscroll = () => {
       this.setState({
         scrollY: window.scrollY,
@@ -184,7 +184,7 @@ class WelcomePage extends React.Component {
   renderFooter() {
     return (
       <OverPack location="footer" playScale={0.4}>
-        <QueueAnim key="footer" className="footer" type="alpha" leaveReverse ease="easeOutQuart">
+        <QueueAnim key="footer" className="welcome-footer" type="alpha" leaveReverse ease="easeOutQuart">
           <div key="footer-slogan" className="footer-slogan">
             <Texty
               className="footer-title"

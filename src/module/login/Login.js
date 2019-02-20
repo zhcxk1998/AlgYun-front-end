@@ -10,7 +10,8 @@ import fieldDecorator from '../../utils/getFieldDecorator';
 
 class Login extends React.Component {
   static propTypes = {
-    history: PropTypes.object.isRequired
+    history: PropTypes.object.isRequired,
+    form: PropTypes.object.isRequired,
   };
 
   handleSubmit(e) {
@@ -21,16 +22,9 @@ class Login extends React.Component {
         const res = await http.post('/api/users/', values);
         switch (res.status) {
           case 401:
-            this.setState({
-              password: '',
-            });
             message.error('密码错误！');
             break;
           case 403:
-            this.setState({
-              phone_number: '',
-              password: '',
-            });
             message.warning('用户不存在！');
             break;
           case 500:
@@ -38,9 +32,12 @@ class Login extends React.Component {
             break;
           default:
             message.success('登录成功！');
-            setTimeout(() => {
-              history.push('./dashBoard');
-            }, 1000);
+            http.get('/api/users/send_email/forget/').then((result) => {
+              console.log(result);
+            });
+            // setTimeout(() => {
+            //   history.push('./dashBoard');
+            // }, 1000);
             break;
         }
       }
