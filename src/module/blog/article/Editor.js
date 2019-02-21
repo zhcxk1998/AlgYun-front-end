@@ -1,7 +1,9 @@
 import React from 'react';
 import {
-  Modal, Form, Button, Input, Select,
+  Modal, Form, Button, Input, Select, Upload, Icon,
 } from 'antd';
+import PropTypes from 'prop-types';
+import { ContentUtils } from 'braft-utils';
 import 'braft-editor/dist/index.css';
 import 'braft-extensions/dist/code-highlighter.css';
 import 'braft-extensions/dist/color-picker.css';
@@ -32,7 +34,7 @@ import 'prismjs/components/prism-python';
 import options from '../../../utils/getEditorOptions';
 import debounce from '../../../utils/debounce';
 
-const {Option} = Select;
+const { Option } = Select;
 
 BraftEditor.use(CodeHighlighter(options));
 BraftEditor.use(ColorPicker());
@@ -44,6 +46,10 @@ BraftEditor.use(Table({
 BraftEditor.use(Markdown());
 
 class Editor extends React.Component {
+  static propTypes={
+    form: PropTypes.object.isRequired,
+  };
+
   constructor(props) {
     super(props);
     this.state = {
@@ -83,11 +89,32 @@ class Editor extends React.Component {
         console.log(values);
       }
     });
-  }
+  };
+
+  // 可搭配Antd的Upload组件进行上传至七牛云，目前暂时先用base64编码代替，目前阶段先禁止上传视频文件
+  uploadHandler = (param) => {
+    if (!param.file) {
+      return false;
+    }
+
+    param.success({
+      url: URL.createObjectURL(param.file),
+      meta: {
+        id: new Date().getTime(),
+        title: new Date().getTime(),
+        alt: '',
+        loop: true, // 指定音视频是否循环播放
+        autoPlay: true, // 指定音视频是否自动播放
+        controls: true, // 指定音视频是否显示控制栏
+        poster: 'https://cdn.algbb.fun/emoji/32.png', // 指定视频播放器的封面
+      },
+    });
+  };
 
   render() {
-    const {editorState, visible} = this.state;
-    const {getFieldDecorator} = this.props.form;
+    const { editorState, visible } = this.state;
+    const { form } = this.props;
+    const { getFieldDecorator } = form;
     const extendControls = [
       {
         key: 'custom-button',
@@ -95,6 +122,22 @@ class Editor extends React.Component {
         text: '预览',
         onClick: this.preview,
       },
+      /* {
+        key: 'antd-uploader',
+        type: 'component',
+        component: (
+          <Upload
+            accept="image/!*"
+            showUploadList={false}
+            customRequest={this.uploadHandler}
+          >
+            {/!* 这里的按钮最好加上type="button"，以避免在表单容器中触发表单提交，用Antd的Button组件则无需如此 *!/}
+            <button type="button" className="control-item button upload-button" data-title="插入图片">
+              <Icon type="picture" theme="filled" />
+            </button>
+          </Upload>
+        ),
+      }, */
     ];
 
     return (
@@ -104,9 +147,9 @@ class Editor extends React.Component {
           visible={visible}
           onCancel={this.onClose}
           width="80%"
-          style={{top: 50}}
+          style={{ top: 50 }}
         >
-          <div className="editor-preview" dangerouslySetInnerHTML={{__html: editorState.toHTML()}}/>
+          <div className="editor-preview" dangerouslySetInnerHTML={{ __html: editorState.toHTML() }} />
         </Modal>
         <div>
           <Form onSubmit={this.handleSubmit} hideRequiredMark layout="inline" className="editor-header">
@@ -117,7 +160,7 @@ class Editor extends React.Component {
                   message: '请输入标题',
                 }],
               })(
-                <Input className="editor-title" placeholder="请输入标题"/>,
+                <Input className="editor-title" placeholder="请输入标题" />,
               )}
             </Form.Item>
             <div>
@@ -129,7 +172,7 @@ class Editor extends React.Component {
                     message: '请选择分类',
                   }],
                 })(
-                  <Select style={{width: 120}}>
+                  <Select style={{ width: 120 }}>
                     <Option value="手冲教程">
                       手冲教程
                     </Option>
@@ -147,7 +190,7 @@ class Editor extends React.Component {
                     message: '请输入状态',
                   }],
                 })(
-                  <Select style={{width: 80}}>
+                  <Select style={{ width: 80 }}>
                     <Option value="发布">
                       发布
                     </Option>
@@ -169,6 +212,12 @@ class Editor extends React.Component {
                 onChange={this.handleEditorChange}
                 extendControls={extendControls}
                 placeholder="请编辑您的内容"
+                media={{
+                  uploadFn: this.uploadHandler,
+                  accepts: {
+                    video: false,
+                  },
+                }}
               />
             </div>
           </div>
