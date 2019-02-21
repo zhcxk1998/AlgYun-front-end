@@ -16,6 +16,11 @@ class Register extends React.Component {
     form: PropTypes.object.isRequired,
   };
 
+  constructor(props) {
+    super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     const { form, history } = this.props;
@@ -56,7 +61,7 @@ class Register extends React.Component {
             <div className="banner-decoration"><span>A</span></div>
             <div className="register-form">
               <h1>Sign Up</h1>
-              <Form hideRequiredMark onSubmit={this.handleSubmit.bind(this)}>
+              <Form hideRequiredMark onSubmit={this.handleSubmit}>
                 {fieldDecorator.map((item, index) => (
                   <Form.Item key={index}>
                     {getFieldDecorator(item.name, item.config)(

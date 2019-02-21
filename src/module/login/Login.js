@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withRouter, Link } from 'react-router-dom';
-import { message, Form } from 'antd';
+import {withRouter, Link} from 'react-router-dom';
+import {message, Form} from 'antd';
 import './Login.css';
 import '../../assets/iconfont/iconfont.css';
 import http from '../../utils/fetch';
@@ -14,9 +14,14 @@ class Login extends React.Component {
     form: PropTypes.object.isRequired,
   };
 
+  constructor(props) {
+    super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
   handleSubmit(e) {
     e.preventDefault();
-    const { form, history } = this.props;
+    const {form, history} = this.props;
     form.validateFieldsAndScroll(async (err, values) => {
       if (!err) {
         const res = await http.post('/api/users/', values);
@@ -45,23 +50,23 @@ class Login extends React.Component {
   }
 
   render() {
-    const { getFieldDecorator } = this.props.form;
+    const {getFieldDecorator} = this.props.form;
     return (
       <div className="login-background">
         <div className="login-wrap">
           <div className="login-wrap-left">
-            <img src={require('../../assets/img/login/login.svg')} width="350px" height="300px" />
+            <img src={require('../../assets/img/login/login.svg')} width="350px" height="300px"/>
           </div>
           <div className="login-wrap-right">
             <div className="banner-decoration"><span>A</span></div>
             <div className="login-form">
               <h1>Sign In</h1>
-              <Form hideRequiredMark onSubmit={this.handleSubmit.bind(this)}>
+              <Form hideRequiredMark onSubmit={this.handleSubmit}>
                 {fieldDecorator.slice(0, 2).map((item, index) => (
                   <Form.Item key={index}>
                     {getFieldDecorator(item.name, item.config)(
-                      <div style={{ position: 'relative', margin: '10px 0' }}>
-                        <i className={`icon iconfont ${item.icon}`} />
+                      <div style={{position: 'relative', margin: '10px 0'}}>
+                        <i className={`icon iconfont ${item.icon}`}/>
                         <input
                           className="login-input"
                           autoComplete="off"
