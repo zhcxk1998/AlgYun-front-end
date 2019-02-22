@@ -12,6 +12,7 @@ module.exports = [
   // },
   {
     name: 'email',
+    type: 'text',
     icon: 'icon-youxiang',
     placeholder: '邮箱',
     config: {
@@ -28,6 +29,7 @@ module.exports = [
   },
   {
     name: 'password',
+    type: 'password',
     icon: 'icon-mima',
     placeholder: '密码',
     config: {
@@ -39,6 +41,7 @@ module.exports = [
   },
   {
     name: 'nickname',
+    type: 'text',
     icon: 'icon-xingming',
     placeholder: '昵称',
     config: {
@@ -50,6 +53,7 @@ module.exports = [
   },
   {
     name: 'school',
+    type: 'text',
     icon: 'icon-xuexiao',
     placeholder: '学校（不填则默认为BNUZ）',
     config: {

@@ -35,6 +35,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+}
+
+.login-wrap-back{
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    background: url(../../assets/img/login/back.png) 100% 100% no-repeat;
 }
 
 .banner-decoration {

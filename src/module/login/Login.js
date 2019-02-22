@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {withRouter, Link} from 'react-router-dom';
-import {message, Form} from 'antd';
+import { withRouter, Link } from 'react-router-dom';
+import { message, Form } from 'antd';
 import './Login.css';
 import '../../assets/iconfont/iconfont.css';
+import axios from 'axios';
 import http from '../../utils/fetch';
 
 import fieldDecorator from '../../utils/getFieldDecorator';
@@ -21,10 +22,20 @@ class Login extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const {form, history} = this.props;
+    const { form, history } = this.props;
     form.validateFieldsAndScroll(async (err, values) => {
       if (!err) {
-        const res = await http.post('/api/users/', values);
+        console.log(values);
+
+        const res = await axios.post('https://algyun.cn:81/users/', values, {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          withCredentials: true,
+        });
+        console.log(document.cookie);
+
+        console.log(res.response);
         switch (res.status) {
           case 401:
             message.error('密码错误！');
@@ -37,9 +48,19 @@ class Login extends React.Component {
             break;
           default:
             message.success('登录成功！');
-            http.get('/api/users/send_email/forget/').then((result) => {
-              console.log(result);
+            const t = await axios.get('https://algyun.cn:81/market/classification/', {
+              withCredentials: true,
+              headers: {
+                Authorization: document.cookie,
+              },
+              proxy: {
+                host: 'https://algyun.cn',
+                port: 81,
+              },
             });
+            console.log(t);
+            console.log(document.cookie);
+
             // setTimeout(() => {
             //   history.push('./dashBoard');
             // }, 1000);
@@ -50,12 +71,13 @@ class Login extends React.Component {
   }
 
   render() {
-    const {getFieldDecorator} = this.props.form;
+    const { getFieldDecorator } = this.props.form;
     return (
       <div className="login-background">
         <div className="login-wrap">
           <div className="login-wrap-left">
-            <img src={require('../../assets/img/login/login.svg')} width="350px" height="300px"/>
+            <Link to="./"><div className="login-wrap-back" /></Link>
+            <img src={require('../../assets/img/login/login.svg')} width="350px" height="300px" />
           </div>
           <div className="login-wrap-right">
             <div className="banner-decoration"><span>A</span></div>
@@ -65,12 +87,13 @@ class Login extends React.Component {
                 {fieldDecorator.slice(0, 2).map((item, index) => (
                   <Form.Item key={index}>
                     {getFieldDecorator(item.name, item.config)(
-                      <div style={{position: 'relative', margin: '10px 0'}}>
-                        <i className={`icon iconfont ${item.icon}`}/>
+                      <div style={{ position: 'relative', margin: '10px 0' }}>
+                        <i className={`icon iconfont ${item.icon}`} />
                         <input
                           className="login-input"
                           autoComplete="off"
                           placeholder={item.placeholder}
+                          type={item.type}
                         />
                       </div>,
                     )}

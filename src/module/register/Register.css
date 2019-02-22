@@ -13,14 +13,14 @@
     box-shadow: rgba(30, 30, 30, 0.3) 0 15px 50px  -5px;
     background-image: linear-gradient(to top, #00c6fb 0%, rgba(0, 91, 234, 0.70) 100%);
     width: 950px;
-    height: 650px;
+    height: 600px;
     display: flex;
 }
 
 .register-wrap-right {
     position: relative;
     width: 500px;
-    height: 650px;
+    height: 600px;
     border-bottom-right-radius: 16px;
     border-top-right-radius: 16px;
     background-color: white;
@@ -31,10 +31,20 @@
 
 .register-wrap-left {
     width: 450px;
-    height: 650px;
+    height: 600px;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+}
+
+.register-wrap-back{
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    background: url(../../assets/img/register/back.png) 100% 100% no-repeat;
 }
 
 .banner-decoration {

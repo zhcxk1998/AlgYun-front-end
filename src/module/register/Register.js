@@ -55,6 +55,7 @@ class Register extends React.Component {
       <div className="register-background">
         <div className="register-wrap">
           <div className="register-wrap-left">
+            <Link to="./"><div className="register-wrap-back" /></Link>
             <img src={require('../../assets/img/register/register.svg')} width="350px" height="300px" />
           </div>
           <div className="register-wrap-right">
@@ -71,6 +72,7 @@ class Register extends React.Component {
                           className="register-input"
                           autoComplete="off"
                           placeholder={item.placeholder}
+                          type={item.type}
                         />
                       </div>,
                     )}
