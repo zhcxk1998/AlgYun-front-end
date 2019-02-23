@@ -1,42 +1,32 @@
-import React, {Component} from 'react';
-import {HashRouter as Router, Route, Switch} from 'react-router-dom';
-import WelcomePage from './module/welcome/WelcomePage';
-import Login from './module/login/Login';
-import Register from './module/register/Register';
-import DashBoard from './module/dashBoard/DashBoard';
-import Blog from './module/blog/Blog';
+import React from 'react';
+import {
+  HashRouter as Router, Switch, Route,
+} from 'react-router-dom';
+import LoadableComponent from './utils/LoadabelComponent';
 
 import './style.css';
 import 'antd/dist/antd.css';
 
+// 按需加载组件
+const WelcomePage = LoadableComponent(() => import('./module/welcome/WelcomePage'));
+const Login = LoadableComponent(() => import('./module/login/Login'));
+const Register = LoadableComponent(() => import('./module/register/Register'));
+const DashBoard = LoadableComponent(() => import('./module/dashBoard/DashBoard'));
+const Blog = LoadableComponent(() => import('./module/blog/Blog'));
 
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <Router>
-          <Switch>
-            <Route
-              exact
-              path="/"
-              component={WelcomePage}
-            />
-            <Route path="/login" component={Login}/>
-            <Route
-              path="/register"
-              component={Register}
-            />
-            <Route path="/dashBoard" component={DashBoard}/>
-            <Route
-              path="/blog"
-              component={Blog}
-            />
-          </Switch>
-        </Router>
-      </div>
-    );
-  }
-}
+const App = () => (
+  <div>
+    <Router>
+      <Switch>
+        <Route path="/welcome" component={WelcomePage} />
+        <Route path="/login" component={Login} />
+        <Route path="/register" component={Register} />
+        <Route path="/dashBoard" component={DashBoard} />
+        <Route path="/blog" component={Blog} />
+      </Switch>
+    </Router>
+  </div>
+);
 
 
 export default App;
