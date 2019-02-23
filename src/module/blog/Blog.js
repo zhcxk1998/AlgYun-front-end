@@ -1,7 +1,6 @@
 import React from 'react';
 import { Route, NavLink } from 'react-router-dom';
 import LoadableComponent from '../../utils/LoadabelComponent';
-import Text from './Test';
 
 const Editor = LoadableComponent(() => import('./article/Editor'));
 
