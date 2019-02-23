@@ -4,5 +4,12 @@ module.exports = {
     "node": true
   },
   "parser": "babel-eslint",
-  "extends": "airbnb"
+  "extends": "airbnb",
+  "rules": {
+    "react/jsx-filename-extension": 0,
+    "react/prop-types": 0,
+    "react/sort-comp":0,
+    "no-extra-boolean-cast":0,
+    "class-methods-use-this": "off",
+  }
 };
