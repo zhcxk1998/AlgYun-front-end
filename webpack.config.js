@@ -6,7 +6,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
@@ -17,7 +17,7 @@ module.exports = {
         use: [
           {
             loader: 'html-loader',
-            options: {minimize: true},
+            options: { minimize: true },
           },
         ],
       },
@@ -54,7 +54,7 @@ module.exports = {
         // 目标服务器地址
         target: 'https://algyun.cn:81/',
         // 路径重写
-        pathRewrite: {'^/api': ''},
+        pathRewrite: { '^/api': '' },
         changeOrigin: true,
         secure: false,
       },

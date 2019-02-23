@@ -72,6 +72,7 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+    margin-top: 20px;
 }
 
 .login-form input:-webkit-autofill {
@@ -147,7 +148,6 @@
     left: 2%;
     font-size: 20px !important;
     position: absolute;
-    top: 26px;
 }
 
 .ant-form-explain{

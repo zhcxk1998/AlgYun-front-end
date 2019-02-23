@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import {
   Modal, Form, Button, Input, Select, Upload, Icon,
@@ -46,10 +47,6 @@ BraftEditor.use(Table({
 BraftEditor.use(Markdown());
 
 class Editor extends React.Component {
-  static propTypes={
-    form: PropTypes.object.isRequired,
-  };
-
   constructor(props) {
     super(props);
     this.state = {
@@ -59,7 +56,8 @@ class Editor extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.props.match.path);
+    const { match } = this.props;
+    console.log(match.path);
   }
 
   handleEditorChange = debounce((editorState) => {

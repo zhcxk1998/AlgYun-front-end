@@ -1,8 +1,9 @@
 import React from 'react';
 import {
-  HashRouter as Router, Switch, Route,
+  HashRouter as Router, Switch, Redirect, Route,
 } from 'react-router-dom';
 import LoadableComponent from './utils/LoadabelComponent';
+import PrivateComponent from './component/PrivateRoute/index';
 
 import './style.css';
 import 'antd/dist/antd.css';
@@ -21,8 +22,11 @@ const App = () => (
         <Route path="/welcome" component={WelcomePage} />
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
-        <Route path="/dashBoard" component={DashBoard} />
-        <Route path="/blog" component={Blog} />
+
+        <PrivateComponent path="/dashBoard" component={DashBoard} />
+        <PrivateComponent path="/blog" component={Blog} />
+
+        <Redirect exact from="/" to="/welcome" />
       </Switch>
     </Router>
   </div>
