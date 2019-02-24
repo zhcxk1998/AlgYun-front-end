@@ -2,18 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4874da54-0ea9-4208-82a8-5736cea6b47a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.babelrc" afterPath="$PROJECT_DIR$/.babelrc" />
-      <change beforePath="$PROJECT_DIR$/.eslintrc.js" afterPath="$PROJECT_DIR$/.eslintrc.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
-      <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
       <change beforePath="$PROJECT_DIR$/src/App.js" afterPath="$PROJECT_DIR$/src/App.js" />
-      <change beforePath="$PROJECT_DIR$/src/module/blog/Blog.js" afterPath="$PROJECT_DIR$/src/module/blog/Blog.js" />
-      <change beforePath="$PROJECT_DIR$/src/module/blog/article/Editor.js" afterPath="$PROJECT_DIR$/src/module/blog/article/Editor.js" />
-      <change beforePath="$PROJECT_DIR$/src/module/login/Login.js" afterPath="$PROJECT_DIR$/src/module/login/Login.js" />
-      <change beforePath="$PROJECT_DIR$/src/module/welcome/WelcomePage.js" afterPath="$PROJECT_DIR$/src/module/welcome/WelcomePage.js" />
-      <change beforePath="$PROJECT_DIR$/src/utils/debounce.js" afterPath="$PROJECT_DIR$/src/utils/debounce.js" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" afterPath="$PROJECT_DIR$/webpack.config.js" />
+      <change beforePath="$PROJECT_DIR$/src/module/blog/Blog.js" afterPath="$PROJECT_DIR$/src/module/Blog/index.js" />
+      <change beforePath="$PROJECT_DIR$/src/module/blog/article/Editor.css" afterPath="$PROJECT_DIR$/src/module/Blog/Editor/style.css" />
+      <change beforePath="$PROJECT_DIR$/src/module/blog/article/Editor.js" afterPath="$PROJECT_DIR$/src/module/Blog/Editor/index.js" />
+      <change beforePath="$PROJECT_DIR$/src/module/dashBoard/DashBoard.js" afterPath="$PROJECT_DIR$/src/module/DashBoard/index.js" />
+      <change beforePath="$PROJECT_DIR$/src/module/login/Login.css" afterPath="$PROJECT_DIR$/src/module/Login/style.css" />
+      <change beforePath="$PROJECT_DIR$/src/module/login/Login.js" afterPath="$PROJECT_DIR$/src/module/Login/index.js" />
+      <change beforePath="$PROJECT_DIR$/src/module/register/Register.css" afterPath="$PROJECT_DIR$/src/module/Register/style.css" />
+      <change beforePath="$PROJECT_DIR$/src/module/register/Register.js" afterPath="$PROJECT_DIR$/src/module/Register/index.js" />
+      <change beforePath="$PROJECT_DIR$/src/module/welcome/WelcomePage.css" afterPath="$PROJECT_DIR$/src/module/WelcomePage/style.css" />
+      <change beforePath="$PROJECT_DIR$/src/module/welcome/WelcomePage.js" afterPath="$PROJECT_DIR$/src/module/WelcomePage/index.js" />
+      <change beforePath="$PROJECT_DIR$/src/utils/getFeature.js" afterPath="$PROJECT_DIR$/src/utils/getFeature.js" />
+      <change beforePath="$PROJECT_DIR$/src/utils/getIntroduction.js" afterPath="$PROJECT_DIR$/src/utils/getIntroduction.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -30,36 +32,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="App.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="12" column="7" lean-forward="false" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="256">
+              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Login.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/module/login/Login.js">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/module/Login/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
+            <state relative-caret-position="3424">
               <caret line="122" column="39" lean-forward="false" selection-start-line="122" selection-start-column="39" selection-end-line="122" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/component/PrivateRoute/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="5" column="10" lean-forward="true" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="117">
+              <caret line="6" column="10" lean-forward="false" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -74,8 +72,8 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Register.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/module/register/Register.js">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/module/Register/index.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1504">
               <caret line="57" column="71" lean-forward="false" selection-start-line="57" selection-start-column="12" selection-end-line="57" selection-end-column="71" />
@@ -94,8 +92,8 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Register.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/module/register/Register.css">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/module/Register/style.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="480">
               <caret line="15" column="16" lean-forward="false" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
@@ -104,8 +102,8 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Editor.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/module/blog/article/Editor.css">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/module/Blog/Editor/style.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="576">
               <caret line="18" column="58" lean-forward="false" selection-start-line="18" selection-start-column="58" selection-end-line="18" selection-end-column="58" />
@@ -192,7 +190,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/module/welcome/WelcomePage.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/module/WelcomePage/index.js" root0="SKIP_INSPECTION" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -220,7 +218,6 @@
         <option value="$PROJECT_DIR$/test.html" />
         <option value="$PROJECT_DIR$/.babelrc" />
         <option value="$PROJECT_DIR$/public/index.html" />
-        <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/utils/getEditorOptions.js" />
         <option value="$PROJECT_DIR$/src/utils/test.js" />
         <option value="$PROJECT_DIR$/src/module/welcome/WelcomePage.css" />
@@ -240,6 +237,7 @@
         <option value="$PROJECT_DIR$/src/module/blog/article/Editor.js" />
         <option value="$PROJECT_DIR$/src/module/login/Login.js" />
         <option value="$PROJECT_DIR$/src/component/PrivateRoute/index.js" />
+        <option value="$PROJECT_DIR$/src/App.js" />
       </list>
     </option>
   </component>
@@ -335,6 +333,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -360,12 +360,59 @@
               <item name="component" type="462c0819:PsiDirectoryNode" />
               <item name="PrivateRoute" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="AlgYun-front-end" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AlgYun-front-end" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="module" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AlgYun-front-end" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AlgYun-front-end" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="module" type="462c0819:PsiDirectoryNode" />
+              <item name="Blog" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AlgYun-front-end" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AlgYun-front-end" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="module" type="462c0819:PsiDirectoryNode" />
+              <item name="Blog" type="462c0819:PsiDirectoryNode" />
+              <item name="Editor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AlgYun-front-end" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AlgYun-front-end" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="module" type="462c0819:PsiDirectoryNode" />
+              <item name="DashBoard" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AlgYun-front-end" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AlgYun-front-end" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="module" type="462c0819:PsiDirectoryNode" />
+              <item name="Login" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AlgYun-front-end" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AlgYun-front-end" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="module" type="462c0819:PsiDirectoryNode" />
+              <item name="Register" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AlgYun-front-end" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AlgYun-front-end" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="module" type="462c0819:PsiDirectoryNode" />
+              <item name="WelcomePage" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -468,20 +515,21 @@
       <workItem from="1550905084979" duration="359000" />
       <workItem from="1550906870872" duration="2557000" />
       <workItem from="1550933136345" duration="79000" />
+      <workItem from="1550977910850" duration="1691000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="398134000" />
+    <option name="totallyTimeSpent" value="399825000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1744186" sideWeight="0.4960091" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1744186" sideWeight="0.4960091" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.66932726" sideWeight="0.5021142" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -494,7 +542,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -581,7 +628,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/module/dashBoard/DashBoard.js">
+    <entry file="file://$PROJECT_DIR$/src/module/DashBoard/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
           <caret line="8" column="12" lean-forward="false" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
@@ -624,7 +671,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/module/welcome/WelcomePage.css">
+    <entry file="file://$PROJECT_DIR$/src/module/WelcomePage/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="227">
           <caret line="350" column="15" lean-forward="false" selection-start-line="350" selection-start-column="1" selection-end-line="350" selection-end-column="15" />
@@ -674,14 +721,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/module/welcome/Test.js" />
-    <entry file="file://$PROJECT_DIR$/src/module/welcome/WelcomePage.js">
+    <entry file="file://$PROJECT_DIR$/src/module/WelcomePage/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="9" column="7" lean-forward="false" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/module/blog/Blog.js">
+    <entry file="file://$PROJECT_DIR$/src/module/Blog/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="800">
           <caret line="29" column="48" lean-forward="false" selection-start-line="29" selection-start-column="48" selection-end-line="29" selection-end-column="48" />
@@ -690,13 +737,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dist/main.js" />
     <entry file="file://$PROJECT_DIR$/dist/index.html" />
-    <entry file="file://$PROJECT_DIR$/src/module/blog/Test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="12" column="19" lean-forward="false" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/module/blog/Test.js" />
     <entry file="file://$PROJECT_DIR$/src/utils/fetch.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="277">
@@ -704,17 +745,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="12" column="7" lean-forward="false" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/module/blog/article/Editor.css">
+    <entry file="file://$PROJECT_DIR$/src/module/Blog/Editor/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="576">
           <caret line="18" column="58" lean-forward="false" selection-start-line="18" selection-start-column="58" selection-end-line="18" selection-end-column="58" />
@@ -726,7 +757,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1152">
           <caret line="39" column="50" lean-forward="true" selection-start-line="39" selection-start-column="50" selection-end-line="39" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -764,7 +794,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/module/login/Login.css">
+    <entry file="file://$PROJECT_DIR$/src/module/Login/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="565">
           <caret line="46" column="51" lean-forward="false" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="51" />
@@ -779,7 +809,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/module/register/Register.js">
+    <entry file="file://$PROJECT_DIR$/src/module/Register/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1504">
           <caret line="57" column="71" lean-forward="false" selection-start-line="57" selection-start-column="12" selection-end-line="57" selection-end-column="71" />
@@ -787,7 +817,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/module/register/Register.css">
+    <entry file="file://$PROJECT_DIR$/src/module/Register/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="15" column="16" lean-forward="false" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
@@ -795,7 +825,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/module/blog/article/Editor.js">
+    <entry file="file://$PROJECT_DIR$/src/module/Blog/Editor/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
           <caret line="3" column="14" lean-forward="false" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
@@ -810,9 +840,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/module/login/Login.js">
+    <entry file="file://$PROJECT_DIR$/src/module/Login/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
+        <state relative-caret-position="3424">
           <caret line="122" column="39" lean-forward="false" selection-start-line="122" selection-start-column="39" selection-end-line="122" selection-end-column="39" />
           <folding />
         </state>
@@ -820,11 +850,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/component/PrivateRoute/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="5" column="10" lean-forward="true" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="117">
+          <caret line="6" column="10" lean-forward="false" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

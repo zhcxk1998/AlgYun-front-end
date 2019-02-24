@@ -1,0 +1,27 @@
+.sider-nav{
+  width: 200px;
+  height: 100vh;
+  overflow-y: auto;
+  position: fixed;
+  padding-bottom: 48px;
+}
+
+.sider-nav::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.sider-nav::-webkit-scrollbar-thumb {
+  background-color: #777;
+}
+
+
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #777;
+}

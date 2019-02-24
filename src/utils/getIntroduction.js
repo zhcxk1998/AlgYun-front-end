@@ -18,7 +18,7 @@ module.exports = [
     slider: 'https://cdn.suisuijiang.com/ImageMessage/5b4ee8321b53ec11c8505de5_1541903492986.jpeg?width=1920&height=1080',
   },
   {
-    img: 'https://cdn.algbb.fun/blog.png',
+    img: 'https://cdn.algbb.fun/Blog.png',
     title: '论坛博客',
     info: '习惯了在微信QQ上面交流，不如来我们的博客论坛来发表动态，编写技术性文章，以此认识更多的朋友，学到更多的知识。',
     slider: 'https://cdn.suisuijiang.com/ImageMessage/5b4ee8321b53ec11c8505de5_1541903116039.jpeg?width=1920&height=1080',
