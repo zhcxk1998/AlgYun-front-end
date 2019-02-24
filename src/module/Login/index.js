@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {
   withRouter,
   Link,
@@ -8,19 +7,13 @@ import {
   message,
   Form,
 } from 'antd';
-import './Login.css';
+import './style.css';
 import '../../assets/iconfont/iconfont.css';
-import axios from 'axios';
 import http from '../../utils/fetch';
 
 import fieldDecorator from '../../utils/getFieldDecorator';
 
 class Login extends React.Component {
-  static propTypes = {
-    history: PropTypes.object.isRequired,
-    form: PropTypes.object.isRequired,
-  };
-
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -34,14 +27,12 @@ class Login extends React.Component {
     } = this.props;
     form.validateFieldsAndScroll(async (err, values) => {
       if (!err) {
-        const res = await axios.post('https://algyun.cn:81/users/', values, {
+        const res = await http.post('https://algyun.cn:81/users/', values, {
           headers: {
             'Content-Type': 'application/json',
           },
           withCredentials: true,
         });
-        const cookie = document.cookie;
-        console.log('before:', cookie);
 
         switch (res.status) {
           case 401:
@@ -55,18 +46,9 @@ class Login extends React.Component {
             break;
           default:
             message.success('登录成功！');
-            document.cookie = cookie;
-            console.log('after:', document.cookie);
-            const t = await axios.get('https://algyun.cn:81/market/classification/', {
-              withCredentials: true,
-              headers: {
-                Authorization: document.cookie,
-              },
-            });
-
-            // setTimeout(() => {
-            //   history.push('./dashBoard');
-            // }, 1000);
+            setTimeout(() => {
+              history.push('./index');
+            }, 1000);
             break;
         }
       }

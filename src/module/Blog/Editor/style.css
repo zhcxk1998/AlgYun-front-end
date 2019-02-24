@@ -6,6 +6,12 @@
     min-height: 1em;
 }
 
+.editor-container{
+    background: rgb(251, 255, 251);
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.5) 0 10px 20px
+}
+
 .editor-header {
     padding: 20px 10% !important;
     box-shadow: rgba(102, 102, 102, 0.5) 0 10px 20px -8px;

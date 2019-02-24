@@ -7,12 +7,12 @@ import QueueAnim from 'rc-queue-anim';
 import Texty from 'rc-texty';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 
-import http from '../../utils/fetch';
 import introduction from '../../utils/getIntroduction';
 import feature from '../../utils/getFeature';
+import debounce from '../../utils/debounce';
 
 import 'rc-texty/assets/index.css';
-import './WelcomePage.css';
+import './style.css';
 
 class WelcomePage extends React.Component {
   constructor(props) {
@@ -23,11 +23,11 @@ class WelcomePage extends React.Component {
   }
 
   componentDidMount() {
-    window.onscroll = () => {
+    window.onscroll = debounce(() => {
       this.setState({
         scrollY: window.scrollY,
       });
-    };
+    }, 100);
   }
 
   handleClick(direction) {
@@ -54,7 +54,7 @@ class WelcomePage extends React.Component {
         duration={1000}
       >
         <Col span={12} key="img" className="banner-img">
-          <img src={require('../../assets/img/banner.png')} width="500px" height="350px" />
+          <img src={require('../../assets/img/banner.png')} alt="" width="500px" height="350px" />
         </Col>
         <Col span={12} className="wrap" key="wrap">
           <Texty
@@ -74,7 +74,7 @@ class WelcomePage extends React.Component {
             <Texty duration={150} type="mask-bottom" mode="smooth" className="wrap-content" key="content2">
               用心创造快乐,没钱玩个锤子
             </Texty>
-            <button className="wrap-button" key="button">Learn More</button>
+            <button type="button" className="wrap-button" key="button">Learn More</button>
           </QueueAnim>
         </Col>
       </QueueAnim>
@@ -111,7 +111,7 @@ class WelcomePage extends React.Component {
                     className="introduction-item"
                     key={index}
                   >
-                    <img src={item.img} key="item-img" />
+                    <img src={item.img} key="item-img" alt="" />
                     <div className="introduction-item-content" key="item-content">{item.title}</div>
                     <div className="introduction-item-round" key="item-round" />
                   </QueueAnim>
@@ -138,7 +138,7 @@ class WelcomePage extends React.Component {
               }}
             >
               {introduction.map((item, index) => (
-                <img className="slider-img" key={index} src={item.slider} />
+                <img className="slider-img" key={index} src={item.slider} alt="" />
               ))}
             </Carousel>
           </div>
@@ -159,7 +159,7 @@ class WelcomePage extends React.Component {
             {feature.map((item, index) => (
               <Row className="feature-item" type="flex" key={index}>
                 <Col span={12} order={index % 2 == 0 ? 2 : 1}>
-                  <img className="feature-img" src={item.img} />
+                  <img className="feature-img" src={item.img} alt="" />
                 </Col>
                 <Col span={12} order={index % 2 == 0 ? 1 : 2}>
                   <div className="feature-info">
@@ -169,7 +169,7 @@ class WelcomePage extends React.Component {
                       {/* 未来可能要加装饰 */}
                       <div className="feature-content-info">{item.info}</div>
                     </div>
-                    <button className="feature-button">了解更多</button>
+                    <button type="button" className="feature-button">了解更多</button>
                   </div>
                 </Col>
               </Row>
@@ -192,7 +192,7 @@ class WelcomePage extends React.Component {
             >
               还在犹豫什么,赶紧加入我们吧
             </Texty>
-            <button className="footer-button" key="footer-button">立即登录</button>
+            <button type="button" className="footer-button" key="footer-button">立即登录</button>
           </div>
           <QueueAnim key="footer-wrap" className="footer-wrap" type="bottom" leaveReverse ease="easeOutQuart">
             <Row className="footer-content">
@@ -221,6 +221,7 @@ class WelcomePage extends React.Component {
                 <Col span={9} className="footer-content-item" key="qrcode">
                   <img
                     src="https://cdn.suisuijiang.com/ImageMessage/5b4ee8321b53ec11c8505de5_1549366687785.png?width=270&height=270"
+                    alt=""
                   />
                   <div className="footer-qrcode">（ 扫一扫获取更多信息 ）</div>
                 </Col>

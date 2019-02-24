@@ -9,7 +9,7 @@ import 'braft-editor/dist/index.css';
 import 'braft-extensions/dist/code-highlighter.css';
 import 'braft-extensions/dist/color-picker.css';
 import 'braft-extensions/dist/table.css';
-import './Editor.css';
+import './style.css';
 
 import BraftEditor from 'braft-editor';
 
@@ -139,7 +139,7 @@ class Editor extends React.Component {
     ];
 
     return (
-      <div>
+      <div className="editor-container">
         <Modal
           title="test"
           visible={visible}

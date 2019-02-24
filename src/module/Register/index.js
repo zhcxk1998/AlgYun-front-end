@@ -1,21 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { withRouter, Link } from 'react-router-dom';
 import {
   message, Form,
 } from 'antd';
-import './Register.css';
+import './style.css';
 import '../../assets/iconfont/iconfont.css';
 import http from '../../utils/fetch';
 
 import fieldDecorator from '../../utils/getFieldDecorator';
 
 class Register extends React.Component {
-  static propTypes = {
-    history: PropTypes.object.isRequired,
-    form: PropTypes.object.isRequired,
-  };
-
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -28,7 +22,7 @@ class Register extends React.Component {
       const user = values;
       if (!err) {
         user.school = user.school || 'BNUZ';
-        const res = await http.post('/api/users/register/', user);
+        const res = await http.post('/api/users/Register/', user);
         switch (res.status) {
           case 401:
             message.warning(res.data.err);
@@ -40,7 +34,7 @@ class Register extends React.Component {
             message.success('注册成功！');
             http.post('/api/users/', values).then(() => {
               setTimeout(() => {
-                history.push('./dashBoard');
+                history.push('./index');
               }, 1000);
             });
             break;
