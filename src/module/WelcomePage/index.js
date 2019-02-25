@@ -30,6 +30,11 @@ class WelcomePage extends React.Component {
     }, 100);
   }
 
+  componentWillUnmount() {
+    // 去除滚动监听事件
+    window.onscroll = null;
+  }
+
   handleClick(direction) {
     switch (direction) {
       case 'left':
@@ -54,7 +59,7 @@ class WelcomePage extends React.Component {
         duration={1000}
       >
         <Col span={12} key="img" className="banner-img">
-          <img src={require('../../assets/img/banner.png')} alt="" width="500px" height="350px" />
+          <img src="https://cdn.algbb.fun/banner.png" alt="" width="500px" height="350px" />
         </Col>
         <Col span={12} className="wrap" key="wrap">
           <Texty
@@ -82,7 +87,6 @@ class WelcomePage extends React.Component {
   }
 
   renderIntroduction() {
-    const { featureIndex, show } = this.state;
     return (
       <OverPack playScale={0.4} localtion="introduction">
         <QueueAnim
@@ -158,7 +162,7 @@ class WelcomePage extends React.Component {
           <QueueAnim key="feature-item" type="bottom">
             {feature.map((item, index) => (
               <Row className="feature-item" type="flex" key={index}>
-                <Col span={12} order={index % 2 == 0 ? 2 : 1}>
+                <Col span={12} order={index % 2 === 0 ? 2 : 1}>
                   <img className="feature-img" src={item.img} alt="" />
                 </Col>
                 <Col span={12} order={index % 2 == 0 ? 1 : 2}>
@@ -220,7 +224,7 @@ class WelcomePage extends React.Component {
                 </Col>
                 <Col span={9} className="footer-content-item" key="qrcode">
                   <img
-                    src="https://cdn.suisuijiang.com/ImageMessage/5b4ee8321b53ec11c8505de5_1549366687785.png?width=270&height=270"
+                    src="https://cdn.algbb.fun/5b4ee8321b53ec11c8505de5_1549366687785.png"
                     alt=""
                   />
                   <div className="footer-qrcode">（ 扫一扫获取更多信息 ）</div>
@@ -241,7 +245,7 @@ class WelcomePage extends React.Component {
     return (
       <QueueAnim type="scaleBig" duration={800} style={{ width: '100vw', height: '100vh' }}>
         <div className={scrollY > 1 ? 'nav change-nav' : 'nav'} key="navbar">
-          <img src={require('../../assets/img/logo.png')} width="80px" height="30px" />
+          <img src="https://cdn.algbb.fun/ImageMessages/BB_1551018466354_width_1275_height_609_" alt="" width="80px" height="30px" />
           <div className="link-group">
             <div className="link-item" key="1">钟霆融</div>
             <div className="link-item" key="2">钟霆融</div>
@@ -250,7 +254,7 @@ class WelcomePage extends React.Component {
             <div className="link-item" key="5">钟霆融</div>
           </div>
           <Link to="/login">
-            <button className="action-login">登录</button>
+            <button type="button" className="action-login">登录</button>
           </Link>
         </div>
         <div className="background" key="background">

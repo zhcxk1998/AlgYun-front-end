@@ -50,7 +50,7 @@ class Register extends React.Component {
         <div className="register-wrap">
           <div className="register-wrap-left">
             <Link to="./"><div className="register-wrap-back" /></Link>
-            <img src={require('../../assets/img/register/register.svg')} width="350px" height="300px" />
+            <img src="https://cdn.algbb.fun/register.svg" alt="register" width="350px" height="300px" />
           </div>
           <div className="register-wrap-right">
             <div className="banner-decoration"><span>A</span></div>

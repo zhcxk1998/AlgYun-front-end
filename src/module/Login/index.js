@@ -67,9 +67,7 @@ class Login extends React.Component {
               <div className="login-wrap-back" />
             </Link>
             <img
-              src={
-                require('../../assets/img/login/login.svg')
-              }
+              src="https://cdn.algbb.fun/register.svg"
               width="350px"
               height="300px"
               alt="login"

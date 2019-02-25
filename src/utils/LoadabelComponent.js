@@ -26,4 +26,5 @@ const LoadableComponent = component => Loadable({
   loading: () => <LoadingPage />,
 });
 
+
 export default LoadableComponent;

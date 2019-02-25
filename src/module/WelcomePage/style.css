@@ -276,13 +276,13 @@ html, body::-webkit-scrollbar-thumb {
 
 .left {
     left: 2%;
-    background: url(../../assets/img/feature/left.png) no-repeat;
+    background: url(https://cdn.algbb.fun/left.png) no-repeat;
     background-size: 100%;
 }
 
 .right {
     right: 2%;
-    background: url(../../assets/img/feature/right.png) no-repeat;
+    background: url(https://cdn.algbb.fun/right.png) no-repeat;
     background-size: 100%;
 }
 
