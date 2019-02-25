@@ -16,7 +16,6 @@ class CustomMenu extends React.Component {
     const pathname = this.props.location.pathname;
     // 获取当前所在的目录层级
     const rank = pathname.split('/');
-    console.log(rank);
     switch (rank.length) {
       case 2: // 一级目录
         this.setState({
@@ -105,17 +104,13 @@ class CustomMenu extends React.Component {
 
   render() {
     const { openKeys, selectedKeys } = this.state;
-    const { menus, theme } = this.props;
-
-    console.log('emmm');
-    console.log(openKeys);
-    console.log(selectedKeys);
-
+    // 引入collapsed来判断侧边栏是否收缩，收缩的话子菜单也要进行收缩不能保持选中状态
+    const { menus, theme, collapsed } = this.props;
     return (
       <Menu
         onOpenChange={this.onOpenChange}
         onClick={({ key }) => this.setState({ selectedKeys: [key] })}
-        openKeys={openKeys}
+        openKeys={!collapsed && openKeys}
         selectedKeys={selectedKeys}
         theme={theme || 'dark'}
         mode="inline"

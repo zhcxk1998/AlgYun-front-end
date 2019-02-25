@@ -44,9 +44,9 @@ class Index extends React.Component {
     const { collapsed } = this.state;
     return (
       <div>
-        <Layout>
+        <Layout hasSider>
           <Sider collapsible collapsed={collapsed} onCollapse={this.onCollapse} style={style.sider}>
-            <SiderNav />
+            <SiderNav collapsed={collapsed} />
           </Sider>
           <Layout>
             <Header style={style.header}>

@@ -68,10 +68,11 @@ class SiderNav extends React.Component {
   }
 
   render() {
+    const { collapsed } = this.props;
     return (
       <div className="sider-nav">
         <div style={{ background: 'rgba(255, 255, 255, .2)', height: 32, margin: 16 }} />
-        <CustomMenu menus={menus} />
+        <CustomMenu menus={menus} collapsed={collapsed} />
       </div>
     );
   }

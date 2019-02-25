@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, withRouter, Redirect } from 'react-router-dom';
+import { Switch, withRouter, Redirect ,Route} from 'react-router-dom';
 import LoadableComponent from '../../utils/LoadabelComponent';
 import PrivateRoute from '../PrivateRoute/index';
 
@@ -18,7 +18,7 @@ class ContentMain extends React.Component {
           <PrivateRoute exact path="/index/home" component={test} />
           <PrivateRoute exact path="/index/blog/entry/editor" component={Editor} />
 
-          <Redirect exact from="/" to="/index/home" />
+          <Redirect exact from="/index" to="/index/home" />
         </Switch>
       </div>
     );

@@ -1,5 +1,8 @@
-.sider-nav{
+.ant-layout-sider-has-trigger .ant-layout-sider-children .sider-nav{
   width: 200px;
+}
+
+.sider-nav{
   height: 100vh;
   overflow-y: auto;
   position: fixed;

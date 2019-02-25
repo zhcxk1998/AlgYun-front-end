@@ -46,6 +46,7 @@ BraftEditor.use(Table({
 }));
 BraftEditor.use(Markdown());
 
+@Form.create()
 class Editor extends React.Component {
   constructor(props) {
     super(props);
@@ -56,8 +57,6 @@ class Editor extends React.Component {
   }
 
   componentDidMount() {
-    const { match } = this.props;
-    console.log(match.path);
   }
 
   handleEditorChange = debounce((editorState) => {
@@ -224,7 +223,5 @@ class Editor extends React.Component {
     );
   }
 }
-
-Editor = Form.create()(Editor);
 
 export default Editor;
