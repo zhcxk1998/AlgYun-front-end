@@ -4,10 +4,7 @@ import LoadableComponent from '../../utils/LoadabelComponent';
 import PrivateRoute from '../PrivateRoute/index';
 
 const Editor = LoadableComponent(() => import('../../module/Blog/Editor/index'));
-
-const test = () => (
-  <div>home</div>
-);
+const Home=LoadableComponent(()=>import('../../module/Home/index'));
 
 @withRouter
 class ContentMain extends React.Component {
@@ -15,7 +12,7 @@ class ContentMain extends React.Component {
     return (
       <div style={{ padding: 16, position: 'relative' }}>
         <Switch>
-          <PrivateRoute exact path="/index/home" component={test} />
+          <PrivateRoute exact path="/index/home" component={Home} />>
           <PrivateRoute exact path="/index/blog/entry/editor" component={Editor} />
 
           <Redirect exact from="/index" to="/index/home" />

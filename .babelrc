@@ -6,8 +6,7 @@
   "plugins": [
     "@babel/plugin-transform-runtime",
     ["@babel/plugin-proposal-decorators", { "legacy": true }],
-    "@babel/plugin-proposal-class-properties",
+    ["@babel/plugin-proposal-class-properties",{ "loose": true }],
     "dynamic-import-webpack",// 不添加这个东东，无法实现懒加载，会报错
-  ]
+  ],
 }
-
