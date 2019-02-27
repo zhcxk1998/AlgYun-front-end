@@ -18,6 +18,7 @@ import ColorPicker from 'braft-extensions/dist/color-picker';
 import HeaderId from 'braft-extensions/dist/header-id';
 import Table from 'braft-extensions/dist/table';
 import Markdown from 'braft-extensions/dist/markdown';
+import CustomBreadcrumb from '../../../component/CustomBreadcrumb/index';
 
 import 'prismjs/components/prism-java';
 import 'prismjs/components/prism-php';
@@ -138,84 +139,87 @@ class Editor extends React.Component {
     ];
 
     return (
-      <div className="editor-container">
-        <Modal
-          title="test"
-          visible={visible}
-          onCancel={this.onClose}
-          width="80%"
-          style={{ top: 50 }}
-        >
-          <div className="editor-preview" dangerouslySetInnerHTML={{ __html: editorState.toHTML() }} />
-        </Modal>
-        <div>
-          <Form onSubmit={this.handleSubmit} hideRequiredMark layout="inline" className="editor-header">
-            <Form.Item label="文章标题">
-              {getFieldDecorator('title', {
-                rules: [{
-                  required: true,
-                  message: '请输入标题',
-                }],
-              })(
-                <Input className="editor-title" placeholder="请输入标题" />,
-              )}
-            </Form.Item>
-            <div>
-              <Form.Item label="分类">
-                {getFieldDecorator('type', {
-                  initialValue: '手冲教程',
+      <div>
+        <CustomBreadcrumb arr={['博客', '文章编辑器']} />
+        <div className="editor-container">
+          <Modal
+            title="test"
+            visible={visible}
+            onCancel={this.onClose}
+            width="80%"
+            style={{ top: 50 }}
+          >
+            <div className="editor-preview" dangerouslySetInnerHTML={{ __html: editorState.toHTML() }} />
+          </Modal>
+          <div>
+            <Form onSubmit={this.handleSubmit} hideRequiredMark layout="inline" className="editor-header">
+              <Form.Item label="文章标题">
+                {getFieldDecorator('title', {
                   rules: [{
                     required: true,
-                    message: '请选择分类',
+                    message: '请输入标题',
                   }],
                 })(
-                  <Select style={{ width: 120 }}>
-                    <Option value="手冲教程">
+                  <Input className="editor-title" placeholder="请输入标题" />,
+                )}
+              </Form.Item>
+              <div>
+                <Form.Item label="分类">
+                  {getFieldDecorator('type', {
+                    initialValue: '手冲教程',
+                    rules: [{
+                      required: true,
+                      message: '请选择分类',
+                    }],
+                  })(
+                    <Select style={{ width: 120 }}>
+                      <Option value="手冲教程">
                       手冲教程
-                    </Option>
-                    <Option value="如何手冲">
+                      </Option>
+                      <Option value="如何手冲">
                       如何手冲
-                    </Option>
-                  </Select>,
-                )}
-              </Form.Item>
-              <Form.Item label="状态">
-                {getFieldDecorator('status', {
-                  initialValue: '发布',
-                  rules: [{
-                    required: true,
-                    message: '请输入状态',
-                  }],
-                })(
-                  <Select style={{ width: 80 }}>
-                    <Option value="发布">
+                      </Option>
+                    </Select>,
+                  )}
+                </Form.Item>
+                <Form.Item label="状态">
+                  {getFieldDecorator('status', {
+                    initialValue: '发布',
+                    rules: [{
+                      required: true,
+                      message: '请输入状态',
+                    }],
+                  })(
+                    <Select style={{ width: 80 }}>
+                      <Option value="发布">
                       发布
-                    </Option>
-                    <Option value="草稿">
+                      </Option>
+                      <Option value="草稿">
                       草稿
-                    </Option>
-                  </Select>,
-                )}
+                      </Option>
+                    </Select>,
+                  )}
+                </Form.Item>
+              </div>
+              <Form.Item>
+                <Button className="editor-button" type="primary" htmlType="submit">提交</Button>
               </Form.Item>
-            </div>
-            <Form.Item>
-              <Button className="editor-button" type="primary" htmlType="submit">提交</Button>
-            </Form.Item>
-          </Form>
-          <div className="editor-wrap">
-            <div className="editor-content">
-              <BraftEditor
-                value={editorState}
-                onChange={this.handleEditorChange}
-                extendControls={extendControls}
-                placeholder="请编辑您的内容"
-                media={{
-                  uploadFn: this.uploadHandler,
-                  accepts: {
-                    video: false,
-                  },
-                }}
-              />
+            </Form>
+            <div className="editor-wrap">
+              <div className="editor-content">
+                <BraftEditor
+                  value={editorState}
+                  onChange={this.handleEditorChange}
+                  extendControls={extendControls}
+                  placeholder="请编辑您的内容"
+                  media={{
+                    uploadFn: this.uploadHandler,
+                    accepts: {
+                      video: false,
+                    },
+                  }}
+                />
+              </div>
             </div>
           </div>
         </div>
