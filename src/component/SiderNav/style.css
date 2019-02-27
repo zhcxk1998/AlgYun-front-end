@@ -1,6 +1,9 @@
 .ant-layout-sider-has-trigger .ant-layout-sider-children .sider-nav{
   width: 200px;
 }
+.ant-layout-sider-collapsed .ant-layout-sider-children .sider-nav{
+  width: 80px;
+}
 
 .sider-nav{
   height: 100vh;

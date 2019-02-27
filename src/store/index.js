@@ -1,15 +1,9 @@
-import {action,observable} from 'mobx';
+import DataStore from './DataStore';
+import UiStore from './UiStore';
 
-class Store {
-  @observable count=0;
+const store = {
+  DataStore,
+  UiStore,
+};
 
-  @action increment(){
-    this.count++;
-  }
-
-  @action decrement(){
-    this.count--;
-  }
-}
-
-export default new Store();
+export default store;

@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { Menu, Icon } from 'antd';
+import { inject, observer } from 'mobx-react';
 
 // 感谢原作者@zhangZhiHao1996提供的思路
 // 此组件的意义就是将数据抽离出来，通过传递数据去渲染
-@withRouter
+@inject('UiStore')@withRouter@observer
 class CustomMenu extends React.Component {
   state = {
     openKeys: [],
@@ -72,6 +73,18 @@ class CustomMenu extends React.Component {
     }
   }
 
+  onClick=({ key }) => {
+    this.setState({
+      selectedKeys: [key],
+    });
+    // 若点击的内容没有子菜单，则收回已打开的子菜单
+    if (key.split('/').length === 3) {
+      this.setState({
+        openKeys: [],
+      });
+    }
+  }
+
   renderMenuItem = ({ key, icon, title }) => (
     <Menu.Item key={key}>
       <Link to={key}>
@@ -105,15 +118,18 @@ class CustomMenu extends React.Component {
   render() {
     const { openKeys, selectedKeys } = this.state;
     // 引入collapsed来判断侧边栏是否收缩，收缩的话子菜单也要进行收缩不能保持选中状态
-    const { menus, theme, collapsed } = this.props;
+    const { menus, theme, UiStore } = this.props;
+    const { collapsed } = UiStore;
     return (
       <Menu
+        ref={(ref) => { this.ref = ref; }}
         onOpenChange={this.onOpenChange}
-        onClick={({ key }) => this.setState({ selectedKeys: [key] })}
-        openKeys={!collapsed && openKeys}
+        onClick={this.onClick}
+        // openKeys={openKeys}
         selectedKeys={selectedKeys}
         theme={theme || 'dark'}
         mode="inline"
+        inlineCollapsed={collapsed}
       >
         {
           menus && menus.map(item => (

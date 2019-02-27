@@ -1,8 +1,9 @@
 import React from 'react';
 import { Layout } from 'antd';
-
+import { inject, observer } from 'mobx-react';
 import SiderNav from '../../component/SiderNav/index';
 import ContentMain from '../../component/ContentMain/index';
+
 
 const {
   Sider, Header, Content, Footer,
@@ -28,20 +29,14 @@ const style = {
   },
 };
 
+@inject('UiStore')@observer
 class Index extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      collapsed: false,
-    };
-  }
-
-  onCollapse = (collapsed) => {
-    this.setState({ collapsed });
+  onCollapse = () => {
+    this.props.UiStore.toggleCollapse();
   }
 
   render() {
-    const { collapsed } = this.state;
+    const { collapsed } = this.props.UiStore;
     return (
       <div>
         <Layout hasSider>

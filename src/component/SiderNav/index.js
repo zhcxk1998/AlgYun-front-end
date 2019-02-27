@@ -55,7 +55,7 @@ const menus = [
   {
     title: '关于',
     icon: 'info-circle-o',
-    key: '/about',
+    key: '/index/about',
   },
 ];
 
@@ -68,11 +68,10 @@ class SiderNav extends React.Component {
   }
 
   render() {
-    const { collapsed } = this.props;
     return (
       <div className="sider-nav">
         <div style={{ background: 'rgba(255, 255, 255, .2)', height: 32, margin: 16 }} />
-        <CustomMenu menus={menus} collapsed={collapsed} />
+        <CustomMenu menus={menus} />
       </div>
     );
   }
