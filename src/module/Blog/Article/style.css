@@ -1,0 +1,13 @@
+.article-container{
+  display: inline-block;
+  width: 70%;
+  height: 500px;
+  background: blue;
+}
+
+.atricle-tags{
+  display: inline-block;
+  width: 30%;
+  height: 500px;
+  background: red;
+}

@@ -9,6 +9,7 @@ import {
 } from 'antd';
 import './style.css';
 import '../../assets/iconfont/iconfont.css';
+import axios from 'axios';
 import http from '../../utils/fetch';
 
 import fieldDecorator from '../../utils/getFieldDecorator';
@@ -27,7 +28,7 @@ class Login extends React.Component {
     } = this.props;
     form.validateFieldsAndScroll(async (err, values) => {
       if (!err) {
-        const res = await http.post('https://algyun.cn:81/users/', values, {
+        const res = await axios.post('https://algyun.cn:83/users/', values, {
           headers: {
             'Content-Type': 'application/json',
           },
@@ -51,6 +52,27 @@ class Login extends React.Component {
             }, 1000);
             break;
         }
+
+        fetch('https://algyun.cn:83/users/', {
+          method: 'POST',
+          mode: 'cors',
+          cache: 'no-cache',
+          credentials: 'include',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(values),
+        }).then(async (res) => {
+          const data = await axios.get('https://algyun.cn:83/market/classification/', {
+            withCredentials: true,
+          });
+          console.log('fetch: ', data);
+        });
+
+        const data = await axios.get('https://algyun.cn:83/market/classification/', {
+          withCredentials: true,
+        });
+        console.log('axios: ', data);
       }
     });
   }

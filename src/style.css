@@ -3,3 +3,17 @@ body,html{
     width: 100%;
     background-color: #fff;
 }
+
+html, body::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+html, body::-webkit-scrollbar-track-piece {
+    background: #fff;
+}
+
+html, body::-webkit-scrollbar-thumb {
+    background: #d7d7d7;
+    border-radius: 20px;
+}

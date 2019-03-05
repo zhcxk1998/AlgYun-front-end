@@ -1,6 +1,8 @@
 import React from 'react';
+import { inject, observer } from 'mobx-react';
 import CustomMenu from '../CustomMenu/index';
 import './style.css';
+
 
 const menus = [
   {
@@ -59,18 +61,19 @@ const menus = [
   },
 ];
 
+@inject('UiStore')@observer
 class SiderNav extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-
-    };
-  }
-
   render() {
+    const { collapsed } = this.props.UiStore;
     return (
       <div className="sider-nav">
-        <div style={{ background: 'rgba(255, 255, 255, .2)', height: 32, margin: 16 }} />
+        {collapsed ? (
+          <div style={{
+            background: 'rgba(0,0,0,.1)', margin: 16, width: 48, height: 32,
+          }}
+          />
+        ) : <img src="https://cdn.algbb.fun/ImageMessages/BB_1551018466354_width_1275_height_609_" width={80} alt="" style={{ margin: '10px 24px' }} />}
+
         <CustomMenu menus={menus} />
       </div>
     );

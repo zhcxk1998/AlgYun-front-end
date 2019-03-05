@@ -2,20 +2,6 @@ body {
     overflow-x: hidden;
 }
 
-html, body::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
-}
-
-html, body::-webkit-scrollbar-track-piece {
-    background: #fff;
-}
-
-html, body::-webkit-scrollbar-thumb {
-    background: #d7d7d7;
-    border-radius: 20px;
-}
-
 .background {
     padding: 100px 100px 200px 100px;
     height: 900px;

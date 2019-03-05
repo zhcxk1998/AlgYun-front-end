@@ -5,8 +5,10 @@ import {
 import LoadableComponent from '../../utils/LoadabelComponent';
 import PrivateRoute from '../PrivateRoute/index';
 
-const Editor = LoadableComponent(() => import('../../module/Blog/Editor/index'));
 const Home = LoadableComponent(() => import('../../module/Home/index'));
+const Article = LoadableComponent(() => import('../../module/Blog/Article/index'));
+const Editor = LoadableComponent(() => import('../../module/Blog/Editor/index'));
+const About = LoadableComponent(() => import('../../module/About/index'));
 
 @withRouter
 class ContentMain extends React.Component {
@@ -16,8 +18,10 @@ class ContentMain extends React.Component {
         <Switch>
           <PrivateRoute exact path="/index/home" component={Home} />
 
+          <PrivateRoute exact path="/index/blog/entry/article" component={Article} />
           <PrivateRoute exact path="/index/blog/entry/editor" component={Editor} />
 
+          <PrivateRoute exact path="/index/about" component={About} />
           <Redirect exact from="/index" to="/index/home" />
         </Switch>
       </div>

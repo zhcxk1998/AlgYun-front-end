@@ -1,8 +1,18 @@
 .ant-layout-sider-has-trigger .ant-layout-sider-children .sider-nav{
   width: 200px;
+  transition: width .2s;
 }
 .ant-layout-sider-collapsed .ant-layout-sider-children .sider-nav{
   width: 80px;
+  transition: width .2s;
+}
+
+.ant-menu-inline{
+  border: none !important;
+}
+
+.ant-menu-vertical{
+  border: none !important;
 }
 
 .sider-nav{
@@ -10,24 +20,28 @@
   overflow-y: auto;
   position: fixed;
   padding-bottom: 48px;
+  box-shadow: rgba(0, 0, 0, 0.2) 2px 0 10px 
 }
 
-.sider-nav::-webkit-scrollbar {
+/* .sider-nav::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 
 .sider-nav::-webkit-scrollbar-thumb {
-  background-color: #777;
+  background-color: red;
+} */
+
+.sider-nav::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
 }
 
-
-
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+.sider-nav::-webkit-scrollbar-track-piece {
+  background: #fff;
 }
 
-::-webkit-scrollbar-thumb {
-  background-color: #777;
+.sider-nav::-webkit-scrollbar-thumb {
+  background: #d7d7d7;
+  border-radius: 12px;
 }

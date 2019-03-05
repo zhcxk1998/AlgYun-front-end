@@ -153,16 +153,18 @@ class Editor extends React.Component {
           </Modal>
           <div>
             <Form onSubmit={this.handleSubmit} hideRequiredMark layout="inline" className="editor-header">
-              <Form.Item label="文章标题">
-                {getFieldDecorator('title', {
-                  rules: [{
-                    required: true,
-                    message: '请输入标题',
-                  }],
-                })(
-                  <Input className="editor-title" placeholder="请输入标题" />,
-                )}
-              </Form.Item>
+              <div>
+                <Form.Item label="文章标题">
+                  {getFieldDecorator('title', {
+                    rules: [{
+                      required: true,
+                      message: '请输入标题',
+                    }],
+                  })(
+                    <Input className="editor-title" placeholder="请输入标题" />,
+                  )}
+                </Form.Item>
+              </div>
               <div>
                 <Form.Item label="分类">
                   {getFieldDecorator('type', {

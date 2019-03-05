@@ -127,7 +127,7 @@ class CustomMenu extends React.Component {
         onClick={this.onClick}
         // openKeys={openKeys}
         selectedKeys={selectedKeys}
-        theme={theme || 'dark'}
+        theme={theme || 'light'}
         mode="inline"
         inlineCollapsed={collapsed}
       >
