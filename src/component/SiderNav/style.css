@@ -4,7 +4,7 @@
 }
 .ant-layout-sider-collapsed .ant-layout-sider-children .sider-nav{
   width: 80px;
-  transition: width .2s;
+  /* transition: width .2s; */
 }
 
 .ant-menu-inline{
@@ -20,7 +20,8 @@
   overflow-y: auto;
   position: fixed;
   padding-bottom: 48px;
-  box-shadow: rgba(0, 0, 0, 0.2) 2px 0 10px 
+  box-shadow: rgba(0, 0, 0, 0.2) 2px 0 10px ;
+  background: #fff;
 }
 
 /* .sider-nav::-webkit-scrollbar {

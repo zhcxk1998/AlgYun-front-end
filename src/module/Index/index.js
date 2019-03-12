@@ -11,22 +11,23 @@ const {
 
 const style = {
   header: collapsed => ({
-    background: '#fff',
     position: 'fixed',
     zIndex: 3,
     width: collapsed ? 'calc(100% - 80px)' : 'calc(100% - 200px)',
     left: collapsed ? 80 : 200,
+    background: '#fff',
     boxShadow: 'rgb(145, 213, 251) 0 5px 10px -5px',
   }),
   content: {
     marginTop: 64,
-    // marginLeft: 200,
+    marginLeft: 80,
   },
   sider: {
     zIndex: 2,
+    position: 'fixed',
   },
   footer: {
-    // marginLeft: 200,
+    marginLeft: 80,
   },
 };
 
