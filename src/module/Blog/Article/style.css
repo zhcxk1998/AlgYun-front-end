@@ -109,12 +109,18 @@
   padding-top: 33.33%;
 }
 
+.slider-wrap:hover .slider-img{
+  opacity: 0.8;
+  transition: opacity .25s ease-in-out;
+}
+
 .slider-img{
   position: absolute;
   /* 居中显示图片更为合理 */
   top: 50%;
   left: 50%;
   transform: translate(-50% ,-50%);
+  transition: opacity .25s ease-in-out;
 }
 
 .slider-title{
